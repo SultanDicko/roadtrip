@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROAD TRIP - L'Événement à Loumbila !</title>
+    
+    <!-- Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Fredoka pour un look fun) --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Définition des polices et couleurs basées sur le logo */
+        :root {
+            --color-green: #1B4F37; /* Vert foncé du logo */
+            --color-orange: #FF6600;  /* Orange vif du logo */
+            --color-purple: #8A2BE2;  /* Violet du logo (pour les accents) */
+            --color-bg-light: #F8F9FA; /* Fond très clair */
+            --color-text: #333;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background-color: var(--color-bg-light);
+            color: var(--color-text);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            color: var(--color-green);
+        }
+        
+        /* Classe pour l'animation au défilement */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Bouton CTA principal */
+        .cta-button {
+            background-color: var(--color-orange);
+            color: white;
+            transition: all 0.3s;
+        }
+        .cta-button:hover {
+            background-color: var(--color-purple);
+            transform: scale(1.05);
+        }
+
+        /* Bouton CTA secondaire (bus) */
+        .cta-button-secondary {
+            background-color: var(--color-purple);
+            color: white;
+            transition: all 0.3s;
+        }
+        .cta-button-secondary:hover {
+            background-color: var(--color-orange);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- HEADER --><header class="fixed top-0 left-0 w-full bg-white z-50 shadow-md">
+        <div class="container mx-auto max-w-6xl px-4">
+            <nav class="flex justify-between items-center py-3">
+                <a href="#">
+                    <!-- VOTRE LOGO INTÉGRÉ ICI --><img src="Logo road trip.png" alt="Logo Road Trip" class="h-12 w-auto">
+                </a>
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="#about" class="text-gray-700 hover:text-green-700 font-medium transition duration-300">L'Événement</a>
+                    <a href="#activities" class="text-gray-700 hover:text-green-700 font-medium transition duration-300">Au Programme</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-green-700 font-medium transition duration-300">Galerie</a>
+                    <a href="#tickets" class="cta-button text-white font-bold py-2 px-5 rounded-full shadow-lg">Acheter un Ticket</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-green-800 focus:outline-none">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <!-- Menu Mobile --><div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <a href="#about" class="block text-center py-2 px-4 text-gray-700 hover:bg-gray-50">L'Événement</a>
+            <a href="#activities" class="block text-center py-2 px-4 text-gray-700 hover:bg-gray-50">Au Programme</a>
+            <a href="#gallery" class="block text-center py-2 px-4 text-gray-700 hover:bg-gray-50">Galerie</a>
+            <a href="#tickets" class="block text-center py-3 px-4 bg-orange-500 text-white font-bold">Acheter un Ticket</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION --><section class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden pt-16">
+        <!-- Images de fond (DIAPORAMA - 10 images ou plus) --><div class="absolute inset-0 z-0">
+            <!-- 
+                REMPLACEZ LES IMAGES CI-DESSOUS PAR VOS PROPRES PHOTOS.
+                Assurez-vous qu'elles sont dans le même dossier que ce fichier html.
+                Par exemple : "hero-1.jpg", "hero-2.jpg", etc.
+                Ajoutez autant d'images que vous le souhaitez !
+            --><!-- Slide 1 --><img src="https://images.unsplash.com/photo-1517457210928-a55e2e4b4d6e?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 1" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000 ease-in-out">
+            <!-- Slide 2 --><img src="https://images.unsplash.com/photo-1519750015927-5b6d26c9f684?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 2" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+            <!-- Slide 3 --><img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 3" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+            <!-- Slide 4 --><img src="https://images.unsplash.com/photo-1498050108023-c5249f4cd085?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 4" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+            <!-- Slide 5 --><img src="https://images.unsplash.com/photo-1470225640330-af35b82f2d57?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 5" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+            <!-- Slide 6 --><img src="https://images.unsplash.com/photo-1540039155733-5ce85f9fa0e8?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 6" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+            <!-- Slide 7 --><img src="https://images.unsplash.com/photo-1470071371197-d861d80b435b?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 7" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+            <!-- Slide 8 --><img src="https://images.unsplash.com/photo-1533174072545-ea66351657c6?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 8" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+            <!-- Slide 9 --><img src="https://images.unsplash.com/photo-1526478834468-b7100b5037d2?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 9" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+            <!-- Slide 10 --><img src="https://images.unsplash.com/photo-1522818903337-f417f7b587d6?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 10" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+        </div>
+        
+        <!-- Overlay (Filtre sombre pour la lisibilité) --><div class="absolute inset-0 bg-black opacity-60 z-10"></div>
+        
+        <!-- Contenu Hero --><div class="relative z-20 p-4"> <!-- z-20 pour être au-dessus du filtre --><h1 class="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-wider mb-4 reveal">ROAD TRIP</h1>
+            <p class="text-xl md:text-2xl font-medium mb-8 text-gray-200 reveal" style="transition-delay: 200ms;">L'ÉVÉNEMENT INCONTOURNABLE À LOUMBILA !</p>
+            <div class="text-2xl md:text-3xl font-bold text-orange-400 mb-8 reveal" style="transition-delay: 400ms;">
+                Jeux · Musique · Boissons · Ambiance
+            </div>
+            <a href="#tickets" class="cta-button text-white font-bold py-3 px-8 rounded-full text-lg uppercase transition duration-300 transform hover:scale-105 shadow-lg reveal" style="transition-delay: 600ms;">Réservez Votre Place</a>
+        </div>
+    </section>
+
+    <!-- SECTION "À PROPOS" --><section id="about" class="py-24 bg-white">
+        <div class="container mx-auto max-w-4xl px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-green-800 mb-6 reveal">Qu'est-ce que le "ROAD TRIP" ?</h2>
+            <p class="text-lg text-gray-700 mb-6 reveal">
+                Bien plus qu'une simple sortie, c'est l'expérience festive à ne pas manquer hors de Ouaga ! Nous vous donnons rendez-vous à Loumbila pour une journée mémorable remplie de jeux, de musique, de boissons fraîches et de rencontres.
+            </p>
+            <p class="text-lg text-gray-700 reveal">
+                Que vous veniez pour vous détendre, faire la fête ou participer à nos animations, le ROAD TRIP est l'occasion parfaite de vous évader et de profiter.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION "AU PROGRAMME" --><section id="activities" class="py-24 bg-gray-100">
+        <div class="container mx-auto max-w-6xl px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center text-green-800 mb-12 reveal">AU PROGRAMME</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                
+                <!-- Carte 1 --><div class="bg-white p-8 rounded-lg shadow-lg reveal border-b-4 border-orange-500">
+                    <div class="text-orange-500 text-6xl font-bold mb-4">🎮</div>
+                    <h3 class="text-2xl font-bold mb-4">Jeux & Animations</h3>
+                    <p class="text-gray-600">Participez à des jeux de groupe, des défis et bien d'autres activités pour gagner des lots et vous amuser !</p>
+                </div>
+                
+                <!-- Carte 2 --><div class="bg-white p-8 rounded-lg shadow-lg reveal border-b-4 border-purple-500" style="transition-delay: 200ms;">
+                    <div class="text-purple-500 text-6xl font-bold mb-4">🎧</div>
+                    <h3 class="text-2xl font-bold mb-4">Musique & Ambiance</h3>
+                    <p class="text-gray-600">Nos DJs s'occupent de l'ambiance avec les meilleurs sons du moment pour vous faire danser toute la journée.</p>
+                </div>
+                
+                <!-- Carte 3 --><div class="bg-white p-8 rounded-lg shadow-lg reveal border-b-4 border-green-700" style="transition-delay: 400ms;">
+                    <div class="text-green-700 text-6xl font-bold mb-4">🍹</div>
+                    <h3 class="text-2xl font-bold mb-4">Boissons & Plus</h3>
+                    <p class="text-gray-600">Un large choix de boissons fraîches et de quoi grignoter sera disponible sur place pour vous régaler.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION "GALERIE" --><section id="gallery" class="py-24 bg-white">
+        <div class="container mx-auto max-w-6xl px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center text-green-800 mb-12 reveal">APERÇU DE L'AMBIANCE</h2>
+            <p class="text-center text-lg text-gray-700 mb-8 reveal">Revivez les meilleurs moments en vidéo !</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- REMPLACEZ CES VIDÉOS PAR VOS PROPRES FICHIERS VIDÉO .mp4 --><!-- Vidéo 1 --><div class="reveal rounded-lg shadow-lg overflow-hidden">
+                    <video class="w-full h-full object-cover" controls loop muted playsinline poster="https://placehold.co/600x400/1B4F37/FFFFFF?text=Vidéo+1">
+                        <source src="video1.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                </div>
+                
+                <!-- Vidéo 2 --><div class="reveal rounded-lg shadow-lg overflow-hidden" style="transition-delay: 200ms;">
+                    <video class="w-full h-full object-cover" controls loop muted playsinline poster="https://placehold.co/600x400/FF6600/FFFFFF?text=Vidéo+2">
+                        <source src="video2.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                </div>
+
+                <!-- Vidéo 3 (Optionnelle) --><div class="reveal rounded-lg shadow-lg overflow-hidden" style="transition-delay: 400ms;">
+                    <video class="w-full h-full object-cover" controls loop muted playsinline poster="https://placehold.co/600x400/8A2BE2/FFFFFF?text=Vidéo+3">
+                        <source src="video3.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                </div>
+
+                <!-- Vidéo 4 (Optionnelle) --><div class="reveal rounded-lg shadow-lg overflow-hidden" style="transition-delay: 600ms;">
+                    <video class="w-full h-full object-cover" controls loop muted playsinline poster="https://placehold.co/600x400/AAAAAA/FFFFFF?text=Vidéo+4">
+                        <source src="video4.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION "BILLETS" (CTA) --><section id="tickets" class="py-24 bg-gray-100 text-center">
+        <div class="container mx-auto max-w-4xl px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-green-800 mb-6 reveal">Achetez vos tickets</h2>
+            <p class="text-xl text-gray-700 mb-10 reveal">Ne manquez pas l'événement ! Choisissez votre pass et réservez dès maintenant.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Ticket 1: Entrée Simple --><div class="bg-white p-8 rounded-lg shadow-xl reveal border-t-8 border-orange-500">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-4">PASS ENTRÉE</h3>
+                    <div class="text-5xl font-bold text-orange-500 mb-4">5 000 <span class="text-2xl">FCFA</span></div>
+                    <ul class="text-lg text-gray-600 space-y-2 mb-6">
+                        <li>✅ Accès à l'événement</li>
+                        <li>✅ Accès aux jeux & animations</li>
+                        <li>❌ Transport non inclus</li>
+                    </ul>
+                    <a href="https://wa.me/22607106484?text=Bonjour,%20je%20souhaite%20réserver%20un%20PASS%20ENTRÉE%20pour%20le%20ROAD%20TRIP." target="_blank" class="w-full block cta-button text-white font-bold py-3 px-8 rounded-full text-lg uppercase shadow-lg">Payer (WhatsApp)</a>
+                </div>
+
+                <!-- Ticket 2: Entrée + Bus --><div class="bg-white p-8 rounded-lg shadow-xl reveal border-t-8 border-purple-500">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-4">PASS + TRANSPORT</h3>
+                    <div class="text-5xl font-bold text-purple-500 mb-4">8 000 <span class="text-2xl">FCFA</span></div>
+                    <ul class="text-lg text-gray-600 space-y-2 mb-6">
+                        <li>✅ Accès à l'événement</li>
+                        <li>✅ Accès aux jeux & animations</li>
+                        <li>🚌 **Transport en Bus (Aller/Retour)**</li>
+                    </ul>
+                    <a href="https://wa.me/22607106484?text=Bonjour,%20je%20souhaite%20réserver%20un%20PASS%20%2B%20TRANSPORT%20pour%20le%20ROAD%20TRIP." target="_blank" class="w-full block cta-button-secondary text-white font-bold py-3 px-8 rounded-full text-lg uppercase shadow-lg">Payer (WhatsApp)</a>
+                </div>
+            </div>
+            <p class="text-gray-600 mt-8 reveal">Note : Mettez votre propre numéro WhatsApp dans les liens ci-dessus.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER --><footer class="py-12 bg-green-900 text-center text-gray-300">
+        <div class="container mx-auto max-w-6xl px-4">
+            <a href="#">
+                <!-- VOTRE LOGO INTÉGRÉ ICI --><img src="Logo road trip.png" alt="Logo Road Trip" class="h-12 w-auto mx-auto mb-4">
+            </a>
+            <div class="flex justify-center space-x-6 mb-6">
+                <!-- Mettez vos vrais liens de réseaux sociaux ici --><a href="#" class="text-gray-300 hover:text-orange-400 transition duration-300 text-lg">Facebook</a>
+                <a href="#" class="text-gray-300 hover:text-orange-400 transition duration-300 text-lg">Instagram</a>
+                <a href="#" class="text-gray-300 hover:text-orange-400 transition duration-300 text-lg">TikTok</a>
+            </div>
+            <p class="text-gray-400 text-sm">&copy; 2025 ROAD TRIP. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Script pour le menu mobile ---
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Fermer le menu mobile en cliquant sur un lien
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // --- Script pour les animations au défilement ---
+        function revealOnScroll() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 50; // Distance pour que l'élément soit visible
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        // Lancer une première fois au chargement
+        revealOnScroll();
+
+        // --- NOUVEAU: Script pour le slideshow Hero (gère N images) ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.hero-slide');
+            let currentSlide = 0;
+            if (slides.length === 0) return; // S'assurer qu'il y a des slides
+
+            function showNextSlide() {
+                // Masquer la slide actuelle
+                slides[currentSlide].classList.remove('opacity-100');
+                slides[currentSlide].classList.add('opacity-0');
+
+                // Passer à la slide suivante
+                currentSlide = (currentSlide + 1) % slides.length;
+
+                // Afficher la nouvelle slide
+                slides[currentSlide].classList.remove('opacity-0');
+                slides[currentSlide].classList.add('opacity-100');
+            }
+
+            // Changer de slide toutes les 5 secondes (5000 ms)
+            setInterval(showNextSlide, 5000);
+        });
+    </script>
+
+</body>
+</html>
+
