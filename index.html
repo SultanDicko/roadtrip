@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROADTRIPOUAGA- L'Événement AU BURKINA FASO !</title>
+    <title>ROAD TRIP OUAGA - L'Événement à Koubri !</title>
     
     <!-- Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
     
@@ -46,6 +46,24 @@
             transform: translateY(0);
         }
 
+        /* Styles pour le Compte à Rebours */
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 10px;
+        }
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-orange);
+        }
+        .countdown-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: white;
+        }
+
         /* Bouton CTA principal */
         .cta-button {
             background-color: var(--color-orange);
@@ -67,6 +85,15 @@
             background-color: var(--color-orange);
             transform: scale(1.05);
         }
+
+        /* Styles pour les produits de la boutique */
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -81,6 +108,7 @@
                     <a href="#about" class="text-gray-700 hover:text-green-700 font-medium transition duration-300">L'Événement</a>
                     <a href="#activities" class="text-gray-700 hover:text-green-700 font-medium transition duration-300">Au Programme</a>
                     <a href="#gallery" class="text-gray-700 hover:text-green-700 font-medium transition duration-300">Galerie</a>
+                    <a href="#store" class="text-gray-700 hover:text-green-700 font-medium transition duration-300">Boutique</a>
                     <a href="#tickets" class="cta-button text-white font-bold py-2 px-5 rounded-full shadow-lg">Acheter un Ticket</a>
                 </div>
                 <div class="md:hidden">
@@ -94,6 +122,7 @@
             <a href="#about" class="block text-center py-2 px-4 text-gray-700 hover:bg-gray-50">L'Événement</a>
             <a href="#activities" class="block text-center py-2 px-4 text-gray-700 hover:bg-gray-50">Au Programme</a>
             <a href="#gallery" class="block text-center py-2 px-4 text-gray-700 hover:bg-gray-50">Galerie</a>
+            <a href="#store" class="block text-center py-2 px-4 text-gray-700 hover:bg-gray-50">Boutique</a>
             <a href="#tickets" class="block text-center py-3 px-4 bg-orange-500 text-white font-bold">Acheter un Ticket</a>
         </div>
     </header>
@@ -105,70 +134,97 @@
                 Assurez-vous qu'elles sont dans le même dossier que ce fichier html.
                 Par exemple : "hero-1.jpg", "hero-2.jpg", etc.
                 Ajoutez autant d'images que vous le souhaitez !
-            --><!-- Slide 1 --><img src="hero-1.jpg" alt="Ambiance de festival 1" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000 ease-in-out">
-            <!-- Slide 2 --><img src="hero-2.jpg" alt="Ambiance de festival 2" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
-            <!-- Slide 3 --><img src="hero-3.jpg" alt="Ambiance de festival 3" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
-            <!-- Slide 4 --><img src="hero-4.jpg" alt="Ambiance de festival 4" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
-            <!-- Slide 5 --><img src="hero-5.jpg" alt="Ambiance de festival 5" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
-            <!-- Slide 6 --><img src="hero-6.jpg" alt="Ambiance de festival 6" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
-            <!-- Slide 7 --><img src="hero-7.jpg" alt="Ambiance de festival 7" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
-            <!-- Slide 8 --><img src="hero-8.jpg" alt="Ambiance de festival 8" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
-            <!-- Slide 9 --><img src="hero-9.jpg" alt="Ambiance de festival 9" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
-            <!-- Slide 10 --><img src="hero-10.jpg" alt="Ambiance de festival 10" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+            --><!-- Slide 1 --><img src="https://images.unsplash.com/photo-1517457210928-a55e2e4b4d6e?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 1" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000 ease-in-out">
+            <!-- Slide 2 --><img src="https://images.unsplash.com/photo-1519750015927-5b6d26c9f684?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 2" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+            <!-- Slide 3 --><img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 3" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+            <!-- Slide 4 --><img src="https://images.unsplash.com/photo-1498050108023-c5249f4cd085?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 4" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+            <!-- Slide 5 --><img src="https://images.unsplash.com/photo-1470225640330-af35b82f2d57?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 5" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+            <!-- Slide 6 --><img src="https://images.unsplash.com/photo-1540039155733-5ce85f9fa0e8?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 6" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+            <!-- Slide 7 --><img src="https://images.unsplash.com/photo-1470071371197-d861d80b435b?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 7" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+            <!-- Slide 8 --><img src="https://images.unsplash.com/photo-1533174072545-ea66351657c6?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 8" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+            <!-- Slide 9 --><img src="https://images.unsplash.com/photo-1526478834468-b7100b5037d2?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 9" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
+            <!-- Slide 10 --><img src="https://images.unsplash.com/photo-1522818903337-f417f7b587d6?auto=format&fit=crop&w=1950&q=80" alt="Ambiance de festival 10" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out">
         </div>
         
         <!-- Overlay (Filtre sombre pour la lisibilité) --><div class="absolute inset-0 bg-black opacity-60 z-10"></div>
         
-        <!-- Contenu Hero --><div class="relative z-20 p-4"> <!-- z-20 pour être au-dessus du filtre --><h1 class="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-wider mb-4 reveal">ROAD TRIP OUAGA</h1>
-            <p class="text-xl md:text-2xl font-medium mb-8 text-gray-200 reveal" style="transition-delay: 200ms;">L'ÉVÉNEMENT INCONTOURNABLE AU BURKINA FASO !</p>
-            <div class="text-2xl md:text-3xl font-bold text-orange-400 mb-8 reveal" style="transition-delay: 400ms;">
-                Jeux · Musique · Boissons · Ambiance
+        <!-- Contenu Hero --><div class="relative z-20 p-4 w-full max-w-4xl mx-auto"> <!-- z-20 pour être au-dessus du filtre -->
+            <p class="text-sm md:text-lg font-medium text-orange-400 tracking-widest mb-2 reveal uppercase">Communauté - Expérience - Jeunesse - Découverte</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-wider mb-2 reveal">ROAD TRIP OUAGA</h1>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-12 mb-8 text-xl reveal" style="transition-delay: 200ms;">
+                <div class="flex items-center"><span class="text-orange-500 mr-2">📅</span> Date : <span class="font-bold ml-2">À venir</span></div>
+                <div class="flex items-center"><span class="text-orange-500 mr-2">📍</span> Lieu : <span class="font-bold ml-2">Loumbila</span></div>
             </div>
-            <a href="#tickets" class="cta-button text-white font-bold py-3 px-8 rounded-full text-lg uppercase transition duration-300 transform hover:scale-105 shadow-lg reveal" style="transition-delay: 600ms;">Réservez Votre Place</a>
+
+            <!-- COMPTE À REBOURS -->
+            <div id="countdown" class="flex justify-center flex-wrap mb-10 reveal" style="transition-delay: 300ms;">
+                <div class="countdown-item">
+                    <span id="days" class="countdown-number">00</span>
+                    <span class="countdown-label">Jours</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours" class="countdown-number">00</span>
+                    <span class="countdown-label">Heures</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes" class="countdown-number">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds" class="countdown-number">00</span>
+                    <span class="countdown-label">Secondes</span>
+                </div>
+            </div>
+
+            <a href="#tickets" class="cta-button text-white font-bold py-3 px-8 rounded-full text-lg uppercase transition duration-300 transform hover:scale-105 shadow-lg reveal" style="transition-delay: 400ms;">Réservez Votre Place</a>
         </div>
     </section>
 
     <!-- SECTION "À PROPOS" --><section id="about" class="py-24 bg-white">
         <div class="container mx-auto max-w-4xl px-4 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold text-green-800 mb-6 reveal">Qu'est-ce que le "ROAD TRIP OUAGA" ?</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-green-800 mb-8 reveal">ROAD TRIP OUAGA ?</h2>
             <p class="text-lg text-gray-700 mb-6 reveal">
-                Bien plus qu'une simple sortie, c'est l'expérience festive à ne pas manquer hors de Ouaga ! Nous vous donnons rendez-vous à ROAD TRIP OUAGA pour une journée mémorable remplie de jeux, de musique, de boissons fraîches et de rencontres.
+                Une initiative qui offre une expérience immersive et originale pour découvrir autrement les merveilles du Burkina Faso.
+            </p>
+            <p class="text-lg text-gray-700 mb-6 reveal">
+                Cet événement se veut un moment de cohésion et de convivialité, alliant découverte, jeux, rires et partage.
             </p>
             <p class="text-lg text-gray-700 reveal">
-                Que vous veniez pour vous détendre, faire la fête ou participer à nos animations, le ROAD TRIP OUAGA est l'occasion parfaite de vous évader et de profiter.
+                Au-delà de l’aventure, il s’agit d’une occasion de célébrer la jeunesse, de valoriser les richesses locales et de renforcer les liens entre les participants à travers une expérience culturelle et humaine inoubliable.
             </p>
         </div>
     </section>
 
-    <!-- SECTION "AU PROGRAMME" --><section id="activities" class="py-24 bg-gray-100">
+    <!-- SECTION "PROGRAMME" --><section id="activities" class="py-24 bg-gray-100">
         <div class="container mx-auto max-w-6xl px-4">
-            <h2 class="text-4xl md:text-5xl font-bold text-center text-green-800 mb-12 reveal">AU PROGRAMME</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-center text-green-800 mb-12 reveal">PROGRAMME</h2>
             <div class="grid md:grid-cols-3 gap-8 text-center">
                 
                 <!-- Carte 1 --><div class="bg-white p-8 rounded-lg shadow-lg reveal border-b-4 border-orange-500">
-                    <div class="text-orange-500 text-6xl font-bold mb-4">🎮</div>
-                    <h3 class="text-2xl font-bold mb-4">Jeux & Animations</h3>
-                    <p class="text-gray-600">Participez à des jeux de groupe, des défis et bien d'autres activités pour gagner des lots et vous amuser !</p>
+                    <div class="text-orange-500 text-6xl font-bold mb-4">🌿</div>
+                    <h3 class="text-2xl font-bold mb-4">Activités & Détente</h3>
+                    <p class="text-gray-600">Faire vivre aux participants une expérience locale, authentique et dépaysante.</p>
                 </div>
                 
                 <!-- Carte 2 --><div class="bg-white p-8 rounded-lg shadow-lg reveal border-b-4 border-purple-500" style="transition-delay: 200ms;">
-                    <div class="text-purple-500 text-6xl font-bold mb-4">🎧</div>
-                    <h3 class="text-2xl font-bold mb-4">Musique & Ambiance</h3>
-                    <p class="text-gray-600">Nos DJs s'occupent de l'ambiance avec les meilleurs sons du moment pour vous faire danser toute la journée.</p>
+                    <div class="text-purple-500 text-6xl font-bold mb-4">🎵</div>
+                    <h3 class="text-2xl font-bold mb-4">Music & Community</h3>
+                    <p class="text-gray-600">Créer une atmosphère festive et énergique, renforcer les liens entre participants et créer un esprit de communauté.</p>
                 </div>
                 
                 <!-- Carte 3 --><div class="bg-white p-8 rounded-lg shadow-lg reveal border-b-4 border-green-700" style="transition-delay: 400ms;">
                     <div class="text-green-700 text-6xl font-bold mb-4">🍹</div>
-                    <h3 class="text-2xl font-bold mb-4">Boissons & Plus</h3>
-                    <p class="text-gray-600">Un large choix de boissons fraîches et de quoi grignoter sera disponible sur place pour vous régaler.</p>
+                    <h3 class="text-2xl font-bold mb-4">Cocktails & Convivialité</h3>
+                    <p class="text-gray-600">Profitez de moments de partage uniques autour de rafraîchissements et de bonne humeur.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION "GALERIE" --><section id="gallery" class="py-24 bg-white">
+    <!-- SECTION "APERÇU" (Galerie) --><section id="gallery" class="py-24 bg-white">
         <div class="container mx-auto max-w-6xl px-4">
-            <h2 class="text-4xl md:text-5xl font-bold text-center text-green-800 mb-12 reveal">APERÇU DE L'AMBIANCE</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-center text-green-800 mb-12 reveal">APERÇU</h2>
             <p class="text-center text-lg text-gray-700 mb-8 reveal">Revivez les meilleurs moments en vidéo !</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- REMPLACEZ CES VIDÉOS PAR VOS PROPRES FICHIERS VIDÉO .mp4 --><!-- Vidéo 1 --><div class="reveal rounded-lg shadow-lg overflow-hidden">
@@ -202,7 +258,7 @@
         </div>
     </section>
 
-    <!-- SECTION "BILLETS" (CTA) --><section id="tickets" class="py-24 bg-gray-100 text-center">
+    <!-- SECTION "ACHETEZ VOS TICKETS" (CTA) --><section id="tickets" class="py-24 bg-gray-100 text-center">
         <div class="container mx-auto max-w-4xl px-4">
             <h2 class="text-4xl md:text-5xl font-bold text-green-800 mb-6 reveal">Achetez vos tickets</h2>
             <p class="text-xl text-gray-700 mb-10 reveal">Ne manquez pas l'événement ! Choisissez votre pass et réservez dès maintenant.</p>
@@ -210,27 +266,115 @@
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Ticket 1: Entrée Simple --><div class="bg-white p-8 rounded-lg shadow-xl reveal border-t-8 border-orange-500">
                     <h3 class="text-3xl font-bold text-gray-800 mb-4">PASS ENTRÉE</h3>
-                    <div class="text-5xl font-bold text-orange-500 mb-4">10 000 <span class="text-2xl">FCFA</span></div>
-                    <ul class="text-lg text-gray-600 space-y-2 mb-6">
-                        <li>✅ Accès à l'événement</li>
-                        <li>✅ Accès aux jeux & animations</li>
-                        <li>❌ Transport non inclus</li>
+                    <div class="text-5xl font-bold text-orange-500 mb-4">5 000 <span class="text-2xl">FCFA</span></div>
+                    <ul class="text-lg text-gray-600 space-y-2 mb-6 text-left pl-8 list-disc">
+                        <li>Accès à l'événement</li>
+                        <li>Accès aux jeux & animations</li>
+                        <li>Transport non inclus</li>
                     </ul>
-                    <a href="https://wa.me/22605671962?text=Bonjour,%20je%20souhaite%20réserver%20un%20PASS%20ENTRÉE%20pour%20le%20ROAD%20TRIP." target="_blank" class="w-full block cta-button text-white font-bold py-3 px-8 rounded-full text-lg uppercase shadow-lg">Payer (WhatsApp)</a>
+                    <a href="https://wa.me/22607106484?text=Bonjour,%20je%20souhaite%20réserver%20un%20PASS%20ENTRÉE%20pour%20le%20ROAD%20TRIP." target="_blank" class="w-full block cta-button text-white font-bold py-3 px-8 rounded-full text-lg uppercase shadow-lg">Payer (WhatsApp)</a>
                 </div>
 
                 <!-- Ticket 2: Entrée + Bus --><div class="bg-white p-8 rounded-lg shadow-xl reveal border-t-8 border-purple-500">
                     <h3 class="text-3xl font-bold text-gray-800 mb-4">PASS + TRANSPORT</h3>
-                    <div class="text-5xl font-bold text-purple-500 mb-4">12 000 <span class="text-2xl">FCFA</span></div>
-                    <ul class="text-lg text-gray-600 space-y-2 mb-6">
-                        <li>✅ Accès à l'événement</li>
-                        <li>✅ Accès aux jeux & animations</li>
-                        <li>🚌 Transport en Bus (Aller/Retour)</li>
+                    <div class="text-5xl font-bold text-purple-500 mb-4">8 000 <span class="text-2xl">FCFA</span></div>
+                    <ul class="text-lg text-gray-600 space-y-2 mb-6 text-left pl-8 list-disc">
+                        <li>Accès à l'événement</li>
+                        <li>Accès aux jeux & animations</li>
+                        <li><strong>Transport en Bus (Aller/Retour)</strong></li>
                     </ul>
-                    <a href="https://wa.me/22605671962?text=Bonjour,%20je%20souhaite%20réserver%20un%20PASS%20%2B%20TRANSPORT%20pour%20le%20ROAD%20TRIP." target="_blank" class="w-full block cta-button-secondary text-white font-bold py-3 px-8 rounded-full text-lg uppercase shadow-lg">Payer (WhatsApp)</a>
+                    <a href="https://wa.me/22607106484?text=Bonjour,%20je%20souhaite%20réserver%20un%20PASS%20%2B%20TRANSPORT%20pour%20le%20ROAD%20TRIP." target="_blank" class="w-full block cta-button-secondary text-white font-bold py-3 px-8 rounded-full text-lg uppercase shadow-lg">Payer (WhatsApp)</a>
                 </div>
             </div>
-            <p class="text-gray-600 mt-8 reveal">.</p>
+            <p class="text-gray-600 mt-8 reveal">Note : Mettez votre propre numéro WhatsApp dans les liens ci-dessus.</p>
+        </div>
+    </section>
+
+    <!-- SECTION "BOUTIQUE" --><section id="store" class="py-24 bg-white text-center">
+        <div class="container mx-auto max-w-6xl px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-green-800 mb-4 reveal">LA BOUTIQUE ROAD TRIP</h2>
+            <p class="text-xl text-gray-700 mb-12 reveal">Repartez avec un souvenir unique de l'événement !</p>
+
+            <!-- Changement ici : Utilisation de Flexbox pour centrer les produits, peu importe leur nombre -->
+            <div class="flex flex-wrap justify-center gap-8">
+                
+                <!-- Produit 1 : T-Shirt -->
+                <div class="product-card bg-gray-50 rounded-xl overflow-hidden shadow-md reveal border border-gray-200 w-full sm:w-72">
+                    <div class="relative">
+                        <!-- POUR AFFICHER VOTRE PHOTO : 
+                             1. Nommez votre photo "tshirt.jpg"
+                             2. Placez-la dans le même dossier que ce fichier index.html
+                        -->
+                        <img src="tshirt.jpg" onerror="this.src='https://placehold.co/400x400/1B4F37/FFFFFF?text=T-Shirt+Road+Trip'" alt="T-Shirt Road Trip" class="w-full h-64 object-cover">
+                        <div class="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAIRE</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">T-Shirt Édition 2025</h3>
+                        <p class="text-gray-600 text-sm mb-4">100% Coton - Design exclusif</p>
+                        <div class="text-2xl font-bold text-orange-600 mb-4">5 000 FCFA</div>
+                        <a href="https://wa.me/22607106484?text=Bonjour,%20je%20veux%20commander%20le%20T-Shirt%20Road%20Trip." target="_blank" class="block w-full py-2 bg-green-800 hover:bg-green-700 text-white font-bold rounded-lg transition duration-300">Commander</a>
+                    </div>
+                </div>
+
+                <!-- Produit 2 : Casquette -->
+                <div class="product-card bg-gray-50 rounded-xl overflow-hidden shadow-md reveal border border-gray-200 w-full sm:w-72" style="transition-delay: 100ms;">
+                    <div class="relative">
+                        <!-- POUR AFFICHER VOTRE PHOTO : Nommez-la "casquette.jpg" -->
+                        <img src="casquette.jpg" onerror="this.src='https://placehold.co/400x400/FF6600/FFFFFF?text=Casquette'" alt="Casquette Road Trip" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Casquette "Vibes"</h3>
+                        <p class="text-gray-600 text-sm mb-4">Style urbain - Taille unique</p>
+                        <div class="text-2xl font-bold text-orange-600 mb-4">3 000 FCFA</div>
+                        <a href="https://wa.me/22607106484?text=Bonjour,%20je%20veux%20commander%20la%20Casquette." target="_blank" class="block w-full py-2 bg-green-800 hover:bg-green-700 text-white font-bold rounded-lg transition duration-300">Commander</a>
+                    </div>
+                </div>
+
+                <!-- Produit 3 : Gourde -->
+                <div class="product-card bg-gray-50 rounded-xl overflow-hidden shadow-md reveal border border-gray-200 w-full sm:w-72" style="transition-delay: 200ms;">
+                    <div class="relative">
+                        <!-- POUR AFFICHER VOTRE PHOTO : Nommez-la "gourde.jpg" -->
+                        <img src="gourde.jpg" onerror="this.src='https://placehold.co/400x400/8A2BE2/FFFFFF?text=Gourde'" alt="Gourde Road Trip" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Gourde Écologique</h3>
+                        <p class="text-gray-600 text-sm mb-4">Gardez vos boissons au frais</p>
+                        <div class="text-2xl font-bold text-orange-600 mb-4">4 000 FCFA</div>
+                        <a href="https://wa.me/22607106484?text=Bonjour,%20je%20veux%20commander%20la%20Gourde." target="_blank" class="block w-full py-2 bg-green-800 hover:bg-green-700 text-white font-bold rounded-lg transition duration-300">Commander</a>
+                    </div>
+                </div>
+
+                <!-- Produit 4 : Sacoche (NOUVEAU) -->
+                <div class="product-card bg-gray-50 rounded-xl overflow-hidden shadow-md reveal border border-gray-200 w-full sm:w-72" style="transition-delay: 250ms;">
+                    <div class="relative">
+                        <!-- POUR AFFICHER VOTRE PHOTO : Nommez-la "sacoche.jpg" -->
+                        <img src="sacoche.jpg" onerror="this.src='https://placehold.co/400x400/FFD700/333333?text=Sacoche'" alt="Sacoche Road Trip" class="w-full h-64 object-cover">
+                        <div class="absolute top-0 right-0 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">NOUVEAU</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Sacoche Road Trip</h3>
+                        <p class="text-gray-600 text-sm mb-4">Pratique, stylée et résistante</p>
+                        <div class="text-2xl font-bold text-orange-600 mb-4">6 000 FCFA</div>
+                        <a href="https://wa.me/22607106484?text=Bonjour,%20je%20veux%20commander%20la%20Sacoche%20Road%20Trip." target="_blank" class="block w-full py-2 bg-green-800 hover:bg-green-700 text-white font-bold rounded-lg transition duration-300">Commander</a>
+                    </div>
+                </div>
+
+                <!-- Produit 5 : Kit Complet -->
+                <div class="product-card bg-gray-50 rounded-xl overflow-hidden shadow-md reveal border-2 border-purple-500 w-full sm:w-72" style="transition-delay: 300ms;">
+                    <div class="relative">
+                        <!-- POUR AFFICHER VOTRE PHOTO : Nommez-la "kit.jpg" -->
+                        <img src="kit.jpg" onerror="this.src='https://placehold.co/400x400/333333/FFFFFF?text=Kit+VIP'" alt="Kit Complet Road Trip" class="w-full h-64 object-cover">
+                        <div class="absolute top-0 right-0 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">PACK PROMO</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Kit "Full Experience"</h3>
+                        <p class="text-gray-600 text-sm mb-4">T-shirt + Casquette + Goodies</p>
+                        <div class="text-2xl font-bold text-purple-600 mb-4">10 000 FCFA</div>
+                        <a href="https://wa.me/22607106484?text=Bonjour,%20je%20veux%20commander%20le%20Kit%20Complet." target="_blank" class="block w-full py-2 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg transition duration-300">Commander</a>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
@@ -244,7 +388,7 @@
                 <a href="#" class="text-gray-300 hover:text-orange-400 transition duration-300 text-lg">Instagram</a>
                 <a href="#" class="text-gray-300 hover:text-orange-400 transition duration-300 text-lg">TikTok</a>
             </div>
-            <p class="text-gray-400 text-sm">&copy; 2025 ROAD TRIP OUAGA. Tous droits réservés.</p>
+            <p class="text-gray-400 text-sm">&copy; 2025 ROAD TRIP. Tous droits réservés.</p>
         </div>
     </footer>
 
@@ -282,7 +426,7 @@
         // Lancer une première fois au chargement
         revealOnScroll();
 
-        // --- NOUVEAU: Script pour le slideshow Hero (gère N images) ---
+        // --- Script pour le slideshow Hero (gère N images) ---
         document.addEventListener('DOMContentLoaded', () => {
             const slides = document.querySelectorAll('.hero-slide');
             let currentSlide = 0;
@@ -304,15 +448,34 @@
             // Changer de slide toutes les 5 secondes (5000 ms)
             setInterval(showNextSlide, 5000);
         });
+
+        // --- SCRIPT COMPTE À REBOURS ---
+        // Configurer la date cible ici : Année, Mois (0-11), Jour, Heure, Minute
+        // Exemple : 25 Décembre 2025 à 10h00
+        const targetDate = new Date(2025, 11, 25, 10, 0, 0).getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = "<div class='text-2xl font-bold text-orange-500'>L'ÉVÉNEMENT EST COMMENCÉ !</div>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
     </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
